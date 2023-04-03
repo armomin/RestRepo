@@ -7,9 +7,9 @@ import java.util.Date;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
-import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 import com.google.common.io.Files;
 
 import constants.FrameworkConstants;
@@ -38,7 +38,7 @@ public final class Listener implements ISuiteListener,ITestListener {
 
 	@Override
 	public void onFinish(ISuite suite) {
-		String dateName=new SimpleDateFormat("yyyy_MM_dd_MM_mm").format(new Date());
+		String dateName=new SimpleDateFormat("yyyyMMdd").format(new Date());
 		File logfile=new File(FrameworkConstants.getLogspath());
 		File suitelogfile=new File(FrameworkConstants.getAPIReportpath()+ dateName + "Logs.log");
 		File report=new File(FrameworkConstants.getTestNGreport());
