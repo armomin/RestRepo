@@ -21,7 +21,7 @@ public class RequestTests {
 
 	@BeforeClass(alwaysRun = true)
 	public void init() {
-		DOMConfigurator.configure(FrameworkConstants.getLogPropertiesPath());
+		DOMConfigurator.configure(FrameworkConstants.getLog4jxmlPath());
 		helper = new RequestHelpers();
 	}
 
@@ -44,6 +44,21 @@ public class RequestTests {
 		Assert.assertEquals("1", response.jsonPath().getString("userId"));
 		Assert.assertEquals("101", response.jsonPath().getString("id"));
 		Log.info("response " + response.asPrettyString());
+
+		Log.info("Log Info");
+		Log.fatal("Log fatal");
+		Log.warn("Log warn");
+
 		System.out.println("response " + response.asPrettyString());
+	}
+
+	@Test
+	public void LOgs() {
+
+		Log.info("Log Info");
+		Log.fatal("Log fatal");
+		Log.warn("Log warn");
+
+
 	}
 }

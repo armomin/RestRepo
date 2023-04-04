@@ -38,7 +38,7 @@ public final class Listener implements ISuiteListener, ITestListener {
 
 	@Override
 	public void onFinish(ISuite suite) {
-		String dateName = new SimpleDateFormat("yyyyMMddHHmmSS").format(new Date());
+		String dateName = new SimpleDateFormat("MM_dd_HH_mm_SS").format(new Date());
 		File logfile = new File(FrameworkConstants.getLogspath());
 		File suitelogfile = new File(FrameworkConstants.getAPIReportpath() + dateName + "Logs.log");
 		File report = new File(FrameworkConstants.getTestNGreport());
@@ -50,7 +50,7 @@ public final class Listener implements ISuiteListener, ITestListener {
 			e.printStackTrace();
 		}
 
-		TestUtils.openFile(FrameworkConstants.getTestNGreport());
+		TestUtils.openFile(FrameworkConstants.getAPIReportpath() + dateName + "TestNgReport.html");
 	}
 
 	public void onTestStart(ITestResult result) {
