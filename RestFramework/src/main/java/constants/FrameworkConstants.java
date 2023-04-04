@@ -27,7 +27,7 @@ public final class FrameworkConstants {
 
 	public static String getAPIReportpath() {
 		String date = new SimpleDateFormat("yyyy_MM_dd").format(new Date());
-		return APIREPORTPATH + "\\" + date + "\\";
+		return APIREPORTPATH + date + "\\";
 	}
 
 	public static String getLogPropertiesPath() {
@@ -42,7 +42,7 @@ public final class FrameworkConstants {
 			+ "\\resources\\config.properties";
 	private static final String LOGSPATH = System.getProperty("user.dir") + "\\resources\\logs.log";
 	private static final String TESTNGREPORT = System.getProperty("user.dir") + "\\test-output\\index.html";
-	private static final String APIREPORTPATH = System.getProperty("user.dir") + "\\Report";
+	private static final String APIREPORTPATH = System.getProperty("user.home") + "\\ApiReport\\";
 	private static final String DOWNLOADPATH = System.getProperty("user.home") + "\\Downloads\\";
 	private static final String LOGPROPERTIESPATH = System.getProperty("user.dir") + "\\resources\\log4j.properties";
 	private static final String LOG4JXMLPATH = System.getProperty("user.dir") + "\\resources\\log4j.xml";
