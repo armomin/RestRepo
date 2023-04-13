@@ -2,8 +2,11 @@ package tests;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.Reporter;
+import org.testng.TestRunner;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -12,7 +15,7 @@ import constants.FrameworkConstants;
 import helpers.BooksHelpers;
 import helpers.RequestHelpers;
 import io.restassured.response.Response;
-import models.books.RequestModel;
+import models.request.RequestModel;
 import utils.Log;
 
 @Listeners(utils.Listener.class)
@@ -25,6 +28,7 @@ public class RequestTests {
 		DOMConfigurator.configure(FrameworkConstants.getLog4jxmlPath());
 		helper = new RequestHelpers();
 	}
+	
 
 	@Test(priority=0)
 	public void RequestMethod() {

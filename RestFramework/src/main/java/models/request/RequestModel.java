@@ -1,4 +1,4 @@
-package models.books;
+package models.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

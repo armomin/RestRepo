@@ -33,11 +33,13 @@ public final class Log {
 	public static void info(String message) {
 
 		Log.info(message);
+		System.out.println(message);
 	}
 
 	public static void exception(String msg, Exception e) {
 
 		Log.info(msg, e);
+
 	}
 
 	public static void exception(String msg) {

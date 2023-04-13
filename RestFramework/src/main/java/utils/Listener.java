@@ -10,6 +10,7 @@ import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.springframework.util.FileSystemUtils;
 
 import com.google.common.io.Files;
 
@@ -40,17 +41,22 @@ public final class Listener implements ISuiteListener, ITestListener {
 	public void onFinish(ISuite suite) {
 		String dateName = new SimpleDateFormat("MM_dd_HH_mm_SS").format(new Date());
 		File logfile = new File(FrameworkConstants.getLogspath());
-		File suitelogfile = new File(FrameworkConstants.getAPIReportpath() + dateName + "Logs.log");
-		File report = new File(FrameworkConstants.getTestNGreport());
-		File suiteReport = new File(FrameworkConstants.getAPIReportpath() + dateName + "TestNgReport.html");
+		File suitelogfile = new File(FrameworkConstants.getAPIReportpath() + "\\" + dateName + "_Logs.log");
+		File apireportfolder = new File(FrameworkConstants.getAPIReportpath());
+		File suiteReport = new File(FrameworkConstants.getAPIReportpath() + "\\" + dateName + "_TestNGReport.html");
+		File testoutput = new File(FrameworkConstants.getTestOutputFolder());
+		File ApiReportIndex = new File(FrameworkConstants.getAPIReportIndexpath());
 		try {
 			FileUtils.copyFile(logfile, suitelogfile);
-			FileUtils.copyFile(report, suiteReport);
+			FileSystemUtils.copyRecursively(testoutput, apireportfolder);
+
+			ApiReportIndex.renameTo(suiteReport);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		TestUtils.openFile(FrameworkConstants.getAPIReportpath() + dateName + "TestNgReport.html");
+		TestUtils.openFile(FrameworkConstants.getAPIReportpath() + "\\" + dateName + "_TestNGReport.html");
 	}
 
 	public void onTestStart(ITestResult result) {

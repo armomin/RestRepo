@@ -2,6 +2,7 @@ package tests;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -16,17 +17,21 @@ import utils.Log;
 public class BooksTests {
 
 	public BooksHelpers helper;
+	
 
 	@BeforeClass(alwaysRun = true)
 	public void init() {
-		DOMConfigurator.configure(FrameworkConstants.getLogPropertiesPath());
-		helper = new BooksHelpers();
+		DOMConfigurator.configure(FrameworkConstants.getLog4jxmlPath());
+		
 	}
+	@BeforeTest
+	
 
 	@Test
 	public void postBookDetails() {
 
 		BooksModel model = new BooksModel();
+		helper = new BooksHelpers();
 
 		model.setId(440);
 		model.setTitle("Ars");

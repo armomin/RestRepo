@@ -21,13 +21,22 @@ public final class FrameworkConstants {
 		return TESTNGREPORT;
 	}
 
+	public static String getTestOutputFolder() {
+		return TESTOUTPUTFOLDER;
+	}
+
 	public static String getDownloadPath() {
 		return DOWNLOADPATH;
 	}
 
 	public static String getAPIReportpath() {
 		String date = new SimpleDateFormat("yyyy_MM_dd").format(new Date());
-		return APIREPORTPATH + date + "\\";
+		return APIREPORTPATH + date;
+	}
+
+	public static String getAPIReportIndexpath() {
+		String date = new SimpleDateFormat("yyyy_MM_dd").format(new Date());
+		return APIREPORTPATH + date + "\\index.html";
 	}
 
 	public static String getLogPropertiesPath() {
@@ -41,6 +50,7 @@ public final class FrameworkConstants {
 	private static final String GLOBALPROPERTIESPATH = System.getProperty("user.dir")
 			+ "\\resources\\config.properties";
 	private static final String LOGSPATH = System.getProperty("user.dir") + "\\resources\\logs.log";
+	private static final String TESTOUTPUTFOLDER = System.getProperty("user.dir") + "\\test-output";
 	private static final String TESTNGREPORT = System.getProperty("user.dir") + "\\test-output\\index.html";
 	private static final String APIREPORTPATH = System.getProperty("user.home") + "\\ApiReport\\";
 	private static final String DOWNLOADPATH = System.getProperty("user.home") + "\\Downloads\\";
