@@ -15,6 +15,7 @@ import constants.FrameworkConstants;
 import helpers.BookingHelpers;
 import helpers.BooksHelpers;
 import io.restassured.response.Response;
+import junit.framework.Assert;
 import models.booking.AuthModel;
 import models.booking.BookingDates;
 import models.booking.BookingModel;
@@ -32,8 +33,6 @@ public class BookingTests {
 		DOMConfigurator.configure(FrameworkConstants.getLog4jxmlPath());
 
 	}
-
-	
 
 	@Test(priority = 1)
 	public void postBookingDetails() throws ParseException {
@@ -53,9 +52,9 @@ public class BookingTests {
 		model.setBookingDates(dates);
 		model.setAdditionalNeeds("Booking Needs");
 
-		Response output = helper.JsonPost(model, EndPoints.booking);
+		Response output = helper.JsonPost(model);
 		bookingid = output.jsonPath().get("bookingid");
-		Log.info("booking Id :" + bookingid);
+		Assert.assertEquals(output.getStatusCode(), 200);
 
 	}
 
@@ -64,11 +63,12 @@ public class BookingTests {
 
 		helper = new BookingHelpers();
 
-		Response output = helper.getRequest(EndPoints.booking, bookingid);
+		Response output = helper.getRequest(bookingid);
+		Assert.assertEquals(output.getStatusCode(), 200);
 
 	}
 
-	@Test(priority = 3,dependsOnMethods = "postBookingDetails")
+	@Test(priority = 3, dependsOnMethods = "postBookingDetails")
 	public void updateBookingDetails() throws ParseException {
 
 		BookingModel model = new BookingModel();
@@ -86,8 +86,40 @@ public class BookingTests {
 		model.setBookingDates(dates);
 		model.setAdditionalNeeds("Booking Needs");
 
-		Response output = helper.putRequest(model, EndPoints.booking, bookingid);
+		Response output = helper.putRequest(model,  bookingid);
+		Assert.assertEquals(output.getStatusCode(), 200);
 
 	}
+	@Test(priority = 4, dependsOnMethods = "postBookingDetails")
+	public void partialupdateBookingDetails() throws ParseException {
+
+		BookingModel model = new BookingModel();
+		BookingDates dates = new BookingDates();
+		helper = new BookingHelpers();
+
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		dates.setCheckIn(formatter.parse("2018-02-01"));
+		dates.setCheckOut(formatter.parse("2019-02-01"));
+
+		model.setFirstName("momin");
+		model.setLastName("momin");
+		Response getoutput = helper.patchtRequest(model,bookingid);
+		Assert.assertEquals(getoutput.getStatusCode(), 200);
+		
+
+		
+
+	}
+
+	@Test(priority = 5, dependsOnMethods = "postBookingDetails")
+	public void deleteBookingDetails() throws ParseException {
+
+		Response output=helper.deleteRequest(EndPoints.booking, bookingid);
+		Assert.assertEquals(output.getStatusCode(), 201);
+		Response getoutput = helper.getRequest(bookingid);
+		Assert.assertEquals(getoutput.getStatusCode(), 404);
+
+	}
+
 
 }

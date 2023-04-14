@@ -45,18 +45,22 @@ public final class Listener implements ISuiteListener, ITestListener {
 		File apireportfolder = new File(FrameworkConstants.getAPIReportpath());
 		File suiteReport = new File(FrameworkConstants.getAPIReportpath() + "\\" + dateName + "_TestNGReport.html");
 		File testoutput = new File(FrameworkConstants.getTestOutputFolder());
-		File ApiReportIndex = new File(FrameworkConstants.getAPIReportIndexpath());
+		File testoutputindex = new File(FrameworkConstants.getTestNGreport());
 		try {
-			FileUtils.copyFile(logfile, suitelogfile);
 			FileSystemUtils.copyRecursively(testoutput, apireportfolder);
+			TestUtils.openFile(FrameworkConstants.getTestNGreport());
+			FileUtils.copyFile(logfile, suitelogfile);
+			FileUtils.copyFile(new File(FrameworkConstants.getTestNGreport()),
+					new File(FrameworkConstants.getAPIReportpath() + "\\" + dateName + "_TestNGReport.html"));
 
-			ApiReportIndex.renameTo(suiteReport);
+			
+			
 
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		TestUtils.openFile(FrameworkConstants.getAPIReportpath() + "\\" + dateName + "_TestNGReport.html");
+		
 	}
 
 	public void onTestStart(ITestResult result) {
