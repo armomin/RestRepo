@@ -1,12 +1,15 @@
 package helpers;
 
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import utils.ConfigManager;
+
 import static io.restassured.RestAssured.given;
 
 import org.apache.log4j.Logger;
 
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import utils.ConfigManager;
+import com.google.gson.Gson;
 
 public class RequestHelpers {
 

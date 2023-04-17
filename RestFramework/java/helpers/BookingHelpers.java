@@ -1,5 +1,11 @@
 package helpers;
 
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import models.booking.AuthModel;
+import utils.ConfigManager;
+
 import java.text.ParseException;
 
 import org.apache.log4j.Logger;
@@ -7,10 +13,6 @@ import org.apache.log4j.Logger;
 import com.google.gson.Gson;
 
 import constants.EndPoints;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import utils.ConfigManager;
 
 public class BookingHelpers {
 

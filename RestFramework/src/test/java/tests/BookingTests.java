@@ -2,25 +2,20 @@ package tests;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import constants.EndPoints;
 import constants.FrameworkConstants;
 import helpers.BookingHelpers;
-import helpers.BooksHelpers;
 import io.restassured.response.Response;
 import junit.framework.Assert;
-import models.booking.AuthModel;
 import models.booking.BookingDates;
 import models.booking.BookingModel;
-import models.books.BooksModel;
-import utils.Log;
+
 
 @Listeners(utils.Listener.class)
 public class BookingTests {
@@ -53,6 +48,7 @@ public class BookingTests {
 		model.setAdditionalNeeds("Booking Needs");
 
 		Response output = helper.JsonPost(model);
+
 		bookingid = output.jsonPath().get("bookingid");
 		Assert.assertEquals(output.getStatusCode(), 200);
 
@@ -86,10 +82,11 @@ public class BookingTests {
 		model.setBookingDates(dates);
 		model.setAdditionalNeeds("Booking Needs");
 
-		Response output = helper.putRequest(model,  bookingid);
+		Response output = helper.putRequest(model, bookingid);
 		Assert.assertEquals(output.getStatusCode(), 200);
 
 	}
+
 	@Test(priority = 4, dependsOnMethods = "postBookingDetails")
 	public void partialupdateBookingDetails() throws ParseException {
 
@@ -103,23 +100,19 @@ public class BookingTests {
 
 		model.setFirstName("momin");
 		model.setLastName("momin");
-		Response getoutput = helper.patchtRequest(model,bookingid);
+		Response getoutput = helper.patchtRequest(model, bookingid);
 		Assert.assertEquals(getoutput.getStatusCode(), 200);
-		
-
-		
 
 	}
 
-	@Test(priority = 5, dependsOnMethods = "postBookingDetails")
+	@Test(priority = 5)
 	public void deleteBookingDetails() throws ParseException {
-
-		Response output=helper.deleteRequest(EndPoints.booking, bookingid);
+		helper = new BookingHelpers();
+		Response output = helper.deleteRequest(EndPoints.booking, bookingid);
 		Assert.assertEquals(output.getStatusCode(), 201);
 		Response getoutput = helper.getRequest(bookingid);
 		Assert.assertEquals(getoutput.getStatusCode(), 404);
 
 	}
-
 
 }

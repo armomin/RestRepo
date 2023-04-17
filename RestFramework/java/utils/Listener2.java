@@ -7,8 +7,10 @@ import java.util.Date;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.TestListenerAdapter;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -16,12 +18,13 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
 
 import constants.FrameworkConstants;
 
-public class Listener implements ISuiteListener, ITestListener{
+public class Listener2 implements ISuiteListener, ITestListener{
 
 	public ExtentHtmlReporter htmlReporter;
 	public ExtentReports extent;
@@ -102,7 +105,7 @@ public class Listener implements ISuiteListener, ITestListener{
 	public void onTestSkipped(ITestResult tr) {
 
 		logger.log(Status.SKIP, MarkupHelper.createLabel(tr.getName(), ExtentColor.ORANGE));
-		logger.log(Status.SKIP,
+		Reporter.parentTest.log(Status.SKIP,
 				MarkupHelper.createLabel(tr.getThrowable().getMessage() + "- Test Case Skipped", ExtentColor.BLUE));
 
 		Log.endTestCase(tr.getName());
