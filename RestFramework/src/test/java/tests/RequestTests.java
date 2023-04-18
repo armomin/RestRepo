@@ -1,11 +1,14 @@
 package tests;
 
 import org.apache.log4j.xml.DOMConfigurator;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
 
 import constants.EndPoints;
 import constants.FrameworkConstants;
@@ -16,6 +19,7 @@ import utils.Log;
 
 @Listeners(utils.Listener.class)
 public class RequestTests {
+	ExtentTest logger;
 
 	public RequestHelpers helper;
 
@@ -61,9 +65,9 @@ public class RequestTests {
 		Log.fatal("Log fatal");
 		Log.warn("Log warn");
 		
-		Reporter.log("Log Info");
-		Reporter.log("Log fatal");
-		Reporter.log("Log warn");
+		logger.pass("Logloglog ug ");
+		logger.pass("Log fatal");
+		logger.pass("Log warn");
 		
 
 	}

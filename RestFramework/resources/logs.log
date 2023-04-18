@@ -1,73 +1,396 @@
-2023-04-17 18:30:32 INFO  Log:14 - =============================================postBookingDetailsSTART====================================================================
-2023-04-17 18:30:32 INFO  BookingHelpers:33 - Payload :{"firstname":"arslan","lastname":"momin","totalprice":234.0,"depositpaid":true,"bookingdates":{"checkin":"Feb 1, 2018, 12:00:00 AM","checkout":"Feb 1, 2019, 12:00:00 AM"},"additionalneeds":"Booking Needs"}
-2023-04-17 18:30:33 DEBUG BasicClientConnectionManager:161 - Get connection for route {s}->https://restful-booker.herokuapp.com:443
-2023-04-17 18:30:33 DEBUG DefaultClientConnectionOperator:177 - Connecting to restful-booker.herokuapp.com:443
-2023-04-17 18:30:34 DEBUG RequestAddCookies:123 - CookieSpec selected: ignoreCookies
-2023-04-17 18:30:34 DEBUG RequestAuthCache:77 - Auth cache not set in the context
-2023-04-17 18:30:34 DEBUG RequestTargetAuthentication:80 - Target auth state: UNCHALLENGED
-2023-04-17 18:30:34 DEBUG RequestProxyAuthentication:89 - Proxy auth state: UNCHALLENGED
-2023-04-17 18:30:34 DEBUG DefaultHttpClient:677 - Attempt 1 to execute request
-2023-04-17 18:30:34 DEBUG DefaultClientConnection:274 - Sending request: POST /booking HTTP/1.1
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "POST /booking HTTP/1.1[\r][\n]"
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "Accept: */*[\r][\n]"
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "Content-Type: application/json[\r][\n]"
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "Content-Length: 421[\r][\n]"
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "Host: restful-booker.herokuapp.com[\r][\n]"
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "Connection: Keep-Alive[\r][\n]"
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.4.1)[\r][\n]"
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "Accept-Encoding: gzip,deflate[\r][\n]"
-2023-04-17 18:30:34 DEBUG wire:73 -  >> "[\r][\n]"
-2023-04-17 18:30:34 DEBUG headers:278 - >> POST /booking HTTP/1.1
-2023-04-17 18:30:34 DEBUG headers:281 - >> Accept: */*
-2023-04-17 18:30:34 DEBUG headers:281 - >> Content-Type: application/json
-2023-04-17 18:30:34 DEBUG headers:281 - >> Content-Length: 421
-2023-04-17 18:30:34 DEBUG headers:281 - >> Host: restful-booker.herokuapp.com
-2023-04-17 18:30:34 DEBUG headers:281 - >> Connection: Keep-Alive
-2023-04-17 18:30:34 DEBUG headers:281 - >> User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.4.1)
-2023-04-17 18:30:34 DEBUG headers:281 - >> Accept-Encoding: gzip,deflate
-2023-04-17 18:30:34 DEBUG wire:87 -  >> "{"firstname":"arslan","lastname":"momin","totalprice":234.0,"depositpaid":true,"bookingdates":{"checkin":1517423400000,"checkout":1548959400000,"checkIn":1517423400000,"checkOut":1548959400000},"additionalneeds":"Booking Needs","totalPrice":234.0,"firstName":"arslan","bookingDates":{"checkin":1517423400000,"checkout":1548959400000,"checkIn":1517423400000,"checkOut":1548959400000},"lastName":"momin","depositPaid":true}"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "HTTP/1.1 200 OK[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "Server: Cowboy[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "Connection: keep-alive[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "X-Powered-By: Express[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "Content-Type: application/json; charset=utf-8[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "Content-Length: 205[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "Etag: W/"cd-dWbtqtA36D7Bg7IogIE6nJdLTqE"[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "Date: Mon, 17 Apr 2023 13:00:35 GMT[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "Via: 1.1 vegur[\r][\n]"
-2023-04-17 18:30:35 DEBUG wire:73 -  << "[\r][\n]"
-2023-04-17 18:30:35 DEBUG DefaultClientConnection:259 - Receiving response: HTTP/1.1 200 OK
-2023-04-17 18:30:35 DEBUG headers:262 - << HTTP/1.1 200 OK
-2023-04-17 18:30:35 DEBUG headers:265 - << Server: Cowboy
-2023-04-17 18:30:35 DEBUG headers:265 - << Connection: keep-alive
-2023-04-17 18:30:35 DEBUG headers:265 - << X-Powered-By: Express
-2023-04-17 18:30:35 DEBUG headers:265 - << Content-Type: application/json; charset=utf-8
-2023-04-17 18:30:35 DEBUG headers:265 - << Content-Length: 205
-2023-04-17 18:30:35 DEBUG headers:265 - << Etag: W/"cd-dWbtqtA36D7Bg7IogIE6nJdLTqE"
-2023-04-17 18:30:35 DEBUG headers:265 - << Date: Mon, 17 Apr 2023 13:00:35 GMT
-2023-04-17 18:30:35 DEBUG headers:265 - << Via: 1.1 vegur
-2023-04-17 18:30:35 DEBUG DefaultHttpClient:504 - Connection can be kept alive indefinitely
-2023-04-17 18:30:35 DEBUG RestAssuredHttpBuilder:553 - Parsing response as: application/json; charset=utf-8
-2023-04-17 18:30:35 DEBUG RestAssuredHttpBuilder:556 - Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
-2023-04-17 18:30:35 DEBUG wire:87 -  << "{"bookingid":10890,"booking":{"firstname":"arslan","lastname":"momin","totalprice":234,"depositpaid":true,"bookingdates":{"checkin":"2018-01-31","checkout":"2019-01-31"},"additionalneeds":"Booking Needs"}}"
-2023-04-17 18:30:35 DEBUG BasicClientConnectionManager:200 - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@7066363
-2023-04-17 18:30:35 DEBUG BasicClientConnectionManager:225 - Connection can be kept alive indefinitely
-2023-04-17 18:30:35 INFO  BookingHelpers:36 - 
- Header :null
-2023-04-17 18:30:35 INFO  BookingHelpers:37 - 
- Status Code : 200
-2023-04-17 18:30:35 INFO  BookingHelpers:38 - 
- Body : {
-    "bookingid": 10890,
-    "booking": {
-        "firstname": "arslan",
-        "lastname": "momin",
-        "totalprice": 234,
-        "depositpaid": true,
-        "bookingdates": {
-            "checkin": "2018-01-31",
-            "checkout": "2019-01-31"
-        },
-        "additionalneeds": "Booking Needs"
-    }
-}
+2023-04-18 18:31:04 INFO  Log:14 - =============================================postTravellerInfoSTART====================================================================
+2023-04-18 18:31:04 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59598<->54.243.238.66:443 closed
+2023-04-18 18:31:04 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59597<->54.243.238.66:443 closed
+2023-04-18 18:31:04 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59596<->54.243.238.66:443 closed
+2023-04-18 18:31:04 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59600<->54.243.238.66:443 closed
+2023-04-18 18:31:04 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59599<->54.243.238.66:443 closed
+2023-04-18 18:31:04 INFO  TravelerHelpers:34 - Payload :
+2023-04-18 18:31:04 DEBUG BasicClientConnectionManager:161 - Get connection for route {}->http://restapi.adequateshop.com:80
+2023-04-18 18:31:04 DEBUG DefaultClientConnectionOperator:177 - Connecting to restapi.adequateshop.com:80
+2023-04-18 18:31:05 DEBUG RequestAddCookies:123 - CookieSpec selected: ignoreCookies
+2023-04-18 18:31:05 DEBUG RequestAuthCache:77 - Auth cache not set in the context
+2023-04-18 18:31:05 DEBUG RequestTargetAuthentication:80 - Target auth state: UNCHALLENGED
+2023-04-18 18:31:05 DEBUG RequestProxyAuthentication:89 - Proxy auth state: UNCHALLENGED
+2023-04-18 18:31:05 DEBUG DefaultHttpClient:677 - Attempt 1 to execute request
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:274 - Sending request: POST /api/Traveler HTTP/1.1
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "POST /api/Traveler HTTP/1.1[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Accept: */*[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Content-Type: application/xml; charset=ISO-8859-1[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Content-Length: 141[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Host: restapi.adequateshop.com[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Connection: Keep-Alive[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.4.1)[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "[\r][\n]"
+2023-04-18 18:31:05 DEBUG headers:278 - >> POST /api/Traveler HTTP/1.1
+2023-04-18 18:31:05 DEBUG headers:281 - >> Accept: */*
+2023-04-18 18:31:05 DEBUG headers:281 - >> Content-Type: application/xml; charset=ISO-8859-1
+2023-04-18 18:31:05 DEBUG headers:281 - >> Content-Length: 141
+2023-04-18 18:31:05 DEBUG headers:281 - >> Host: restapi.adequateshop.com
+2023-04-18 18:31:05 DEBUG headers:281 - >> Connection: Keep-Alive
+2023-04-18 18:31:05 DEBUG headers:281 - >> User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.4.1)
+2023-04-18 18:31:05 DEBUG headers:281 - >> Accept-Encoding: gzip,deflate
+2023-04-18 18:31:05 DEBUG wire:87 -  >> "<Travelerinformation><name>Zola</name><email>monty_keebler505@yahoo.com</email><adderes>Cape 04295, Suite 036</adderes></Travelerinformation>"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "HTTP/1.1 201 Created[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Cache-Control: no-cache[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Pragma: no-cache[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Content-Type: application/xml; charset=utf-8[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Expires: -1[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Location: http://restapi.adequateshop.com/api/Traveler/224755[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Server: Microsoft-IIS/10.0[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "X-AspNet-Version: 4.0.30319[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "X-Powered-By: ASP.NET[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Date: Tue, 18 Apr 2023 13:01:06 GMT[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Content-Length: 306[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "[\r][\n]"
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:259 - Receiving response: HTTP/1.1 201 Created
+2023-04-18 18:31:05 DEBUG headers:262 - << HTTP/1.1 201 Created
+2023-04-18 18:31:05 DEBUG headers:265 - << Cache-Control: no-cache
+2023-04-18 18:31:05 DEBUG headers:265 - << Pragma: no-cache
+2023-04-18 18:31:05 DEBUG headers:265 - << Content-Type: application/xml; charset=utf-8
+2023-04-18 18:31:05 DEBUG headers:265 - << Expires: -1
+2023-04-18 18:31:05 DEBUG headers:265 - << Location: http://restapi.adequateshop.com/api/Traveler/224755
+2023-04-18 18:31:05 DEBUG headers:265 - << Server: Microsoft-IIS/10.0
+2023-04-18 18:31:05 DEBUG headers:265 - << X-AspNet-Version: 4.0.30319
+2023-04-18 18:31:05 DEBUG headers:265 - << X-Powered-By: ASP.NET
+2023-04-18 18:31:05 DEBUG headers:265 - << Date: Tue, 18 Apr 2023 13:01:06 GMT
+2023-04-18 18:31:05 DEBUG headers:265 - << Content-Length: 306
+2023-04-18 18:31:05 DEBUG DefaultHttpClient:504 - Connection can be kept alive indefinitely
+2023-04-18 18:31:05 DEBUG RestAssuredHttpBuilder:553 - Parsing response as: application/xml; charset=utf-8
+2023-04-18 18:31:05 DEBUG RestAssuredHttpBuilder:556 - Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2023-04-18 18:31:05 INFO  TravelerHelpers:40 - Status code : 201
+2023-04-18 18:31:05 DEBUG wire:87 -  << "<Travelerinformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><id>224755</id><name>Zola</name><email>monty_keebler505@yahoo.com</email><adderes>Cape 04295, Suite 036</adderes><createdat>2023-04-18T13:01:06.0888518Z</createdat></Travelerinformation>"
+2023-04-18 18:31:05 DEBUG BasicClientConnectionManager:200 - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@6c1e40d9
+2023-04-18 18:31:05 DEBUG BasicClientConnectionManager:225 - Connection can be kept alive indefinitely
+2023-04-18 18:31:05 INFO  TravelerHelpers:41 - Post Response :<Travelerinformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><id>224755</id><name>Zola</name><email>monty_keebler505@yahoo.com</email><adderes>Cape 04295, Suite 036</adderes><createdat>2023-04-18T13:01:06.0888518Z</createdat></Travelerinformation>
+2023-04-18 18:31:05 INFO  TravelerHelpers:43 - Response Body : <Travelerinformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id>224755</id>
+  <name>Zola</name>
+  <email>monty_keebler505@yahoo.com</email>
+  <adderes>Cape 04295, Suite 036</adderes>
+  <createdat>2023-04-18T13:01:06.0888518Z</createdat>
+</Travelerinformation>
+2023-04-18 18:31:05 INFO  TravelerHelpers:44 - Description : 
+2023-04-18 18:31:05 INFO  Log:35 - Traveler Id :224755
+2023-04-18 18:31:05 INFO  Log:19 - =============================================postTravellerInfoEND====================================================================
+2023-04-18 18:31:05 INFO  Log:14 - =============================================getTravellerInfoSTART====================================================================
+2023-04-18 18:31:05 DEBUG BasicClientConnectionManager:161 - Get connection for route {}->http://restapi.adequateshop.com:80
+2023-04-18 18:31:05 DEBUG DefaultClientConnectionOperator:177 - Connecting to restapi.adequateshop.com:80
+2023-04-18 18:31:05 DEBUG RequestAddCookies:123 - CookieSpec selected: ignoreCookies
+2023-04-18 18:31:05 DEBUG RequestAuthCache:77 - Auth cache not set in the context
+2023-04-18 18:31:05 DEBUG RequestTargetAuthentication:80 - Target auth state: UNCHALLENGED
+2023-04-18 18:31:05 DEBUG RequestProxyAuthentication:89 - Proxy auth state: UNCHALLENGED
+2023-04-18 18:31:05 DEBUG DefaultHttpClient:677 - Attempt 1 to execute request
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:274 - Sending request: GET /api/Traveler/224755 HTTP/1.1
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "GET /api/Traveler/224755 HTTP/1.1[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Content-Type: application/xml; charset=ISO-8859-1[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Accept: */*[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Host: restapi.adequateshop.com[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Connection: Keep-Alive[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.4.1)[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "[\r][\n]"
+2023-04-18 18:31:05 DEBUG headers:278 - >> GET /api/Traveler/224755 HTTP/1.1
+2023-04-18 18:31:05 DEBUG headers:281 - >> Content-Type: application/xml; charset=ISO-8859-1
+2023-04-18 18:31:05 DEBUG headers:281 - >> Accept: */*
+2023-04-18 18:31:05 DEBUG headers:281 - >> Host: restapi.adequateshop.com
+2023-04-18 18:31:05 DEBUG headers:281 - >> Connection: Keep-Alive
+2023-04-18 18:31:05 DEBUG headers:281 - >> User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.4.1)
+2023-04-18 18:31:05 DEBUG headers:281 - >> Accept-Encoding: gzip,deflate
+2023-04-18 18:31:05 DEBUG wire:73 -  << "HTTP/1.1 200 OK[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Cache-Control: no-cache[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Pragma: no-cache[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Content-Type: application/xml; charset=utf-8[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Expires: -1[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Server: Microsoft-IIS/10.0[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "X-AspNet-Version: 4.0.30319[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "X-Powered-By: ASP.NET[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Date: Tue, 18 Apr 2023 13:01:06 GMT[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Content-Length: 305[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "[\r][\n]"
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:259 - Receiving response: HTTP/1.1 200 OK
+2023-04-18 18:31:05 DEBUG headers:262 - << HTTP/1.1 200 OK
+2023-04-18 18:31:05 DEBUG headers:265 - << Cache-Control: no-cache
+2023-04-18 18:31:05 DEBUG headers:265 - << Pragma: no-cache
+2023-04-18 18:31:05 DEBUG headers:265 - << Content-Type: application/xml; charset=utf-8
+2023-04-18 18:31:05 DEBUG headers:265 - << Expires: -1
+2023-04-18 18:31:05 DEBUG headers:265 - << Server: Microsoft-IIS/10.0
+2023-04-18 18:31:05 DEBUG headers:265 - << X-AspNet-Version: 4.0.30319
+2023-04-18 18:31:05 DEBUG headers:265 - << X-Powered-By: ASP.NET
+2023-04-18 18:31:05 DEBUG headers:265 - << Date: Tue, 18 Apr 2023 13:01:06 GMT
+2023-04-18 18:31:05 DEBUG headers:265 - << Content-Length: 305
+2023-04-18 18:31:05 DEBUG DefaultHttpClient:504 - Connection can be kept alive indefinitely
+2023-04-18 18:31:05 DEBUG RestAssuredHttpBuilder:553 - Parsing response as: application/xml; charset=utf-8
+2023-04-18 18:31:05 DEBUG RestAssuredHttpBuilder:556 - Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2023-04-18 18:31:05 DEBUG wire:87 -  << "<Travelerinformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><id>224755</id><name>Zola</name><email>monty_keebler505@yahoo.com</email><adderes>Cape 04295, Suite 036</adderes><createdat>2023-04-18T13:01:06.0888518</createdat></Travelerinformation>"
+2023-04-18 18:31:05 DEBUG BasicClientConnectionManager:200 - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@38ebc866
+2023-04-18 18:31:05 DEBUG BasicClientConnectionManager:225 - Connection can be kept alive indefinitely
+2023-04-18 18:31:05 INFO  TravelerHelpers:56 - Get Header :null
+2023-04-18 18:31:05 INFO  TravelerHelpers:57 - Get Status Code : 200
+2023-04-18 18:31:05 INFO  TravelerHelpers:59 - Get Body : <Travelerinformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id>224755</id>
+  <name>Zola</name>
+  <email>monty_keebler505@yahoo.com</email>
+  <adderes>Cape 04295, Suite 036</adderes>
+  <createdat>2023-04-18T13:01:06.0888518</createdat>
+</Travelerinformation>
+2023-04-18 18:31:05 INFO  Log:19 - =============================================getTravellerInfoEND====================================================================
+2023-04-18 18:31:05 INFO  Log:14 - =============================================updateTravellerDetailsSTART====================================================================
+2023-04-18 18:31:05 DEBUG BasicClientConnectionManager:161 - Get connection for route {}->http://restapi.adequateshop.com:80
+2023-04-18 18:31:05 DEBUG DefaultClientConnectionOperator:177 - Connecting to restapi.adequateshop.com:80
+2023-04-18 18:31:05 DEBUG RequestAddCookies:123 - CookieSpec selected: ignoreCookies
+2023-04-18 18:31:05 DEBUG RequestAuthCache:77 - Auth cache not set in the context
+2023-04-18 18:31:05 DEBUG RequestTargetAuthentication:80 - Target auth state: UNCHALLENGED
+2023-04-18 18:31:05 DEBUG RequestProxyAuthentication:89 - Proxy auth state: UNCHALLENGED
+2023-04-18 18:31:05 DEBUG DefaultHttpClient:677 - Attempt 1 to execute request
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:274 - Sending request: PUT /api/Traveler HTTP/1.1
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "PUT /api/Traveler HTTP/1.1[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Accept: */*[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Content-Type: application/xml; charset=ISO-8859-1[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Content-Length: 121[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Host: restapi.adequateshop.com[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Connection: Keep-Alive[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.4.1)[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  >> "[\r][\n]"
+2023-04-18 18:31:05 DEBUG headers:278 - >> PUT /api/Traveler HTTP/1.1
+2023-04-18 18:31:05 DEBUG headers:281 - >> Accept: */*
+2023-04-18 18:31:05 DEBUG headers:281 - >> Content-Type: application/xml; charset=ISO-8859-1
+2023-04-18 18:31:05 DEBUG headers:281 - >> Content-Length: 121
+2023-04-18 18:31:05 DEBUG headers:281 - >> Host: restapi.adequateshop.com
+2023-04-18 18:31:05 DEBUG headers:281 - >> Connection: Keep-Alive
+2023-04-18 18:31:05 DEBUG headers:281 - >> User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.4.1)
+2023-04-18 18:31:05 DEBUG headers:281 - >> Accept-Encoding: gzip,deflate
+2023-04-18 18:31:05 DEBUG wire:87 -  >> "<Travelerinformation><name>Ammarjaa</name><email>amarjaR281@gmail.com</email><adderes>USA</adderes></Travelerinformation>"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "HTTP/1.1 405 Method Not Allowed[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Allow: GET, HEAD, OPTIONS, TRACE[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Content-Type: text/html[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Server: Microsoft-IIS/10.0[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "X-Powered-By: ASP.NET[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Date: Tue, 18 Apr 2023 13:01:06 GMT[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "Content-Length: 1293[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "[\r][\n]"
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:259 - Receiving response: HTTP/1.1 405 Method Not Allowed
+2023-04-18 18:31:05 DEBUG headers:262 - << HTTP/1.1 405 Method Not Allowed
+2023-04-18 18:31:05 DEBUG headers:265 - << Allow: GET, HEAD, OPTIONS, TRACE
+2023-04-18 18:31:05 DEBUG headers:265 - << Content-Type: text/html
+2023-04-18 18:31:05 DEBUG headers:265 - << Server: Microsoft-IIS/10.0
+2023-04-18 18:31:05 DEBUG headers:265 - << X-Powered-By: ASP.NET
+2023-04-18 18:31:05 DEBUG headers:265 - << Date: Tue, 18 Apr 2023 13:01:06 GMT
+2023-04-18 18:31:05 DEBUG headers:265 - << Content-Length: 1293
+2023-04-18 18:31:05 DEBUG DefaultHttpClient:504 - Connection can be kept alive indefinitely
+2023-04-18 18:31:05 DEBUG RestAssuredHttpBuilder:553 - Parsing response as: text/html
+2023-04-18 18:31:05 DEBUG RestAssuredHttpBuilder:556 - Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<html xmlns="http://www.w3.org/1999/xhtml">[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<head>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<title>405 - HTTP verb used to access this page is not allowed.</title>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<style type="text/css">[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<!--[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "fieldset{padding:0 15px 10px 15px;} [\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "h1{font-size:2.4em;margin:0;color:#FFF;}[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "h2{font-size:1.7em;margin:0;color:#CC0000;} [\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} [\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "background-color:#555555;}[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "#content{margin:0 0 0 2%;position:relative;}[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << ".content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "-->[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "</style>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "</head>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<body>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<div id="header"><h1>Server Error</h1></div>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "<div id="content">[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << " <div class="content-container"><fieldset>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:87 -  << "  <h2>405 - HTTP verb used to access this pag"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "e is not allowed.</h2>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "  <h3>The page you are looking for cannot be displayed because an invalid method (HTTP verb) was used to attempt access.</h3>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << " </fieldset></div>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "</div>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "</body>[\r][\n]"
+2023-04-18 18:31:05 DEBUG wire:73 -  << "</html>[\r][\n]"
+2023-04-18 18:31:05 DEBUG BasicClientConnectionManager:200 - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@54556723
+2023-04-18 18:31:05 DEBUG BasicClientConnectionManager:225 - Connection can be kept alive indefinitely
+2023-04-18 18:31:05 INFO  TravelerHelpers:73 - Update Header :null
+2023-04-18 18:31:05 INFO  TravelerHelpers:74 - Update Status Code : 405
+2023-04-18 18:31:05 INFO  TravelerHelpers:75 - Update Body : <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>405 - HTTP verb used to access this page is not allowed.</title>
+    <style type="text/css">
+&lt;!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+--&gt;
+</style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Server Error</h1>
+    </div>
+    <div id="content">
+      <div class="content-container">
+        <fieldset>
+          <h2>405 - HTTP verb used to access this page is not allowed.</h2>
+          <h3>The page you are looking for cannot be displayed because an invalid method (HTTP verb) was used to attempt access.</h3>
+        </fieldset>
+      </div>
+    </div>
+  </body>
+</html>
+2023-04-18 18:31:05 INFO  Log:19 - =============================================updateTravellerDetailsEND====================================================================
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/spark.spa.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/spark.spa_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/spark.spa_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/spark.spa.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/spark.spa.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/spark.spa.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "commons/commons-variables.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-variables_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-variables_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-variables.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "commons/commons-variables.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/commons/commons-variables.ftl"
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59603<->122.176.47.222:80 closed
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59602<->122.176.47.222:80 closed
+2023-04-18 18:31:05 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59601<->122.176.47.222:80 closed
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "commons/commons-macros.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-macros_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-macros_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-macros.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "commons/commons-macros.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/commons/commons-macros.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/macros/attributes.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/attributes_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/attributes_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/attributes.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/macros/attributes.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/macros/attributes.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/macros/log.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/log_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/log_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/log.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/macros/log.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/macros/log.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/macros/recurse_nodes.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/recurse_nodes_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/recurse_nodes_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/recurse_nodes.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/macros/recurse_nodes.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/macros/recurse_nodes.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - "spark/macros/log.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/macros/attr-common.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/attr-common_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/attr-common_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/macros/attr-common.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/macros/attr-common.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/macros/attr-common.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/head.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/head_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/head_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/head.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/partials/head.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/head.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "commons/commons-inject-css.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-inject-css_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-inject-css_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-inject-css.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "commons/commons-inject-css.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/commons/commons-inject-css.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/navbar.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/navbar_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/navbar_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/navbar.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/partials/navbar.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/navbar.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/sidenav.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/sidenav_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/sidenav_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/sidenav.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/partials/sidenav.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/sidenav.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/test.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/test_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/test_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/test.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/partials/test.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/test.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/standard-content_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/standard-content_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/standard-content.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/standard-content.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:05 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:05 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:05 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:05 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:05 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:05 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/exception.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/exception_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/exception_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/exception.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/partials/exception.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/exception.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/category.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/category_en_US.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/category_en.ftl"): Not found
+2023-04-18 18:31:05 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/category.ftl"): Found
+2023-04-18 18:31:05 DEBUG cache:45 - Loading template for "spark/partials/category.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/category.ftl"
+2023-04-18 18:31:05 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/device.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/device_en_US.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/device_en.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/device.ftl"): Found
+2023-04-18 18:31:06 DEBUG cache:45 - Loading template for "spark/partials/device.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/device.ftl"
+2023-04-18 18:31:06 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/author.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/author_en_US.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/author_en.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/author.ftl"): Found
+2023-04-18 18:31:06 DEBUG cache:45 - Loading template for "spark/partials/author.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/author.ftl"
+2023-04-18 18:31:06 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/log.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/log_en_US.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/log_en.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/log.ftl"): Found
+2023-04-18 18:31:06 DEBUG cache:45 - Loading template for "spark/partials/log.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/log.ftl"
+2023-04-18 18:31:06 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/dashboard.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/dashboard_en_US.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/dashboard_en.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/dashboard.ftl"): Found
+2023-04-18 18:31:06 DEBUG cache:45 - Loading template for "spark/partials/dashboard.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/dashboard.ftl"
+2023-04-18 18:31:06 DEBUG cache:45 - Couldn't find template in cache for "spark/partials/scripts.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/scripts_en_US.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/scripts_en.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("spark/partials/scripts.ftl"): Found
+2023-04-18 18:31:06 DEBUG cache:45 - Loading template for "spark/partials/scripts.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/spark/partials/scripts.ftl"
+2023-04-18 18:31:06 DEBUG cache:45 - Couldn't find template in cache for "commons/commons-inject-js.ftl"("en_US", UTF-8, parsed); will try to load it.
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-inject-js_en_US.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-inject-js_en.ftl"): Not found
+2023-04-18 18:31:06 DEBUG cache:45 - TemplateLoader.findTemplateSource("commons/commons-inject-js.ftl"): Found
+2023-04-18 18:31:06 DEBUG cache:45 - Loading template for "commons/commons-inject-js.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/12343/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/commons/commons-inject-js.ftl"
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/spark.spa.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "commons/commons-variables.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "commons/commons-macros.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/macros/attributes.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/macros/log.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/macros/recurse_nodes.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/macros/log.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/macros/attr-common.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/head.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "commons/commons-inject-css.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/navbar.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/sidenav.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/test.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/standard-content.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/exception.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/category.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/device.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/author.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/log.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/dashboard.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "spark/partials/scripts.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG cache:45 - "commons/commons-inject-js.ftl"("en_US", UTF-8, parsed) cached copy not yet stale; using cached.
+2023-04-18 18:31:06 DEBUG DefaultClientConnection:180 - Connection 0.0.0.0:59595<->54.243.238.66:443 closed

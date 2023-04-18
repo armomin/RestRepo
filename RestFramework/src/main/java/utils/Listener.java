@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
+import org.springframework.util.FileSystemUtils;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
@@ -15,15 +17,15 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
 
 import constants.FrameworkConstants;
 
-public class Listener implements ISuiteListener, ITestListener{
+public class Listener implements ISuiteListener, ITestListener {
 
-	public ExtentHtmlReporter htmlReporter;
+	public ExtentSparkReporter htmlReporter;
 	public ExtentReports extent;
 	public ExtentTest logger;
 
@@ -40,20 +42,22 @@ public class Listener implements ISuiteListener, ITestListener{
 			reportDir.mkdir();
 		}
 
-		htmlReporter = new ExtentHtmlReporter(FrameworkConstants.getpExtentReportPath());
-		extent = new ExtentReports();
+		if (Objects.isNull(extent)) {
+			htmlReporter = new ExtentSparkReporter(FrameworkConstants.getpExtentReportPath());
+			extent = new ExtentReports();
 
-		extent.attachReporter(htmlReporter);
-		extent.setSystemInfo("Host name", "localhost");
-		extent.setSystemInfo("Environemnt", "QA");
-		extent.setSystemInfo("user", "pavan");
+			extent.attachReporter(htmlReporter);
+			extent.setSystemInfo("Host name", "localhost");
+			extent.setSystemInfo("Environemnt", "QA");
+			extent.setSystemInfo("user", "arslan");
 
-		htmlReporter.config().setDocumentTitle("Automation Report"); // Tile of report
-		htmlReporter.config().setReportName("Functional Testing"); // name of the report
+			htmlReporter.config().setDocumentTitle("Automation Report"); // Tile of report
+			htmlReporter.config().setReportName("Functional Testing"); // name of the report
 
-		htmlReporter.config().setTheme(Theme.STANDARD);
-
+			htmlReporter.config().setTheme(Theme.STANDARD);
+		}
 	}
+
 	@Override
 	public void onFinish(ISuite suite) {
 		String dateName = new SimpleDateFormat("MM_dd_HH_mm_SS").format(new Date());
@@ -66,14 +70,17 @@ public class Listener implements ISuiteListener, ITestListener{
 		File extentreport = new File(FrameworkConstants.getpExtentReportPath());
 		try {
 
+			extent.flush();
+
 			Files.copy(logfile, suitelogfile);
 			Files.copy(extentreport, suiteReport);
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		TestUtils.openFile(FrameworkConstants.getpExtentReportPath());
 		extent.flush();
+		TestUtils.openFile(FrameworkConstants.getAPIReportpath() + "\\" + dateName + "_ExtentReport.html");
+
 	}
 
 	public void onTestStart(ITestResult tr) {
@@ -108,6 +115,18 @@ public class Listener implements ISuiteListener, ITestListener{
 		Log.endTestCase(tr.getName());
 	}
 
-	
+	public void pass(String message) {
 
+		logger.log(Status.PASS,message);
+	}
+
+	public void info(String message) {
+
+		logger.log(Status.INFO,message);
+	}
+
+	public void fail(String message) {
+
+		logger.log(Status.FAIL,message);
+	}
 }
