@@ -1,7 +1,6 @@
 package tests;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.testng.annotations.BeforeClass;
@@ -15,11 +14,8 @@ import constants.FrameworkConstants;
 import fabricator.Alphanumeric;
 import fabricator.Contact;
 import fabricator.Fabricator;
-import helpers.BookingHelpers;
 import helpers.TravelerHelpers;
 import io.restassured.response.Response;
-import models.booking.BookingDates;
-import models.booking.BookingModel;
 import models.traveler.Travelerinformation;
 import utils.Log;
 
@@ -35,7 +31,7 @@ public class TravelerTests {
 
 	}
 	
-	@Test(priority=0, groups="booking")
+	@Test(priority=0, groups="traveler")
 	public void postTravellerInfo() throws JsonProcessingException {
 		
 		Travelerinformation trModel=new Travelerinformation();
@@ -55,7 +51,7 @@ public class TravelerTests {
 	
 	}
 	
-	@Test(priority = 1, dependsOnMethods = "postTravellerInfo", groups="booking")
+	@Test(priority = 1, dependsOnMethods = "postTravellerInfo", groups="traveler")
 	public void getTravellerInfo()  {
 
 		helper = new TravelerHelpers();
@@ -64,7 +60,7 @@ public class TravelerTests {
 
 	}
 	
-	@Test(priority = 2,dependsOnMethods = "postTravellerInfo", groups="booking")
+	@Test(priority = 2,dependsOnMethods = "postTravellerInfo", groups="traveler")
 	public void updateTravellerDetails() throws ParseException, JsonProcessingException {
 
 		Travelerinformation trModel=new Travelerinformation();

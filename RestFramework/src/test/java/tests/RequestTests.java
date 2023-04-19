@@ -1,9 +1,7 @@
 package tests;
 
 import org.apache.log4j.xml.DOMConfigurator;
-
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -30,7 +28,7 @@ public class RequestTests {
 	}
 	
 
-	@Test(priority=0)
+	@Test(priority=0,groups = "Request")
 	public void RequestMethod() {
 
 		RequestModel model = new RequestModel();
@@ -42,14 +40,14 @@ public class RequestTests {
 		System.out.println("request :" + model);
 
 		Response response = helper.JsonPost(model, EndPoints.request);
-		Reporter.log("###########################################");
+		
 		Assert.assertEquals(201, response.statusCode());
 		Assert.assertEquals("foo", response.jsonPath().getString("title"));
 		Assert.assertEquals("bar", response.jsonPath().getString("body"));
 		Assert.assertEquals("1", response.jsonPath().getString("userId"));
 		Assert.assertEquals("101", response.jsonPath().getString("id"));
 		Log.info("response " + response.asPrettyString());
-		Reporter.log("###########################################");
+		
 
 		Log.info("Log Info");
 		Log.fatal("Log fatal");
@@ -58,16 +56,14 @@ public class RequestTests {
 		System.out.println("response " + response.asPrettyString());
 	}
 
-	@Test(priority=1)
+	@Test(priority=1,groups = "Request")
+
 	public void LogsTest() {
 
 		Log.info("Log Info");
 		Log.fatal("Log fatal");
 		Log.warn("Log warn");
-		
-		logger.pass("Logloglog ug ");
-		logger.pass("Log fatal");
-		logger.pass("Log warn");
+	
 		
 
 	}

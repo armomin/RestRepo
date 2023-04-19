@@ -1,6 +1,9 @@
 package constants;
 
 import java.util.Date;
+
+import utils.ConfigManager;
+
 import java.text.SimpleDateFormat;
 
 public final class FrameworkConstants {
@@ -31,14 +34,14 @@ public final class FrameworkConstants {
 
 	public static String getAPIReportpath() {
 		String date = new SimpleDateFormat("yyyy_MM_dd").format(new Date());
-		return APIREPORTPATH + date;
+		return APIREPORTPATH + date + "\\" + ConfigManager.getProperty("suite");
 	}
 
 	public static String getAPIReportIndexpath() {
 		String date = new SimpleDateFormat("yyyy_MM_dd").format(new Date());
 		return APIREPORTPATH + date + "\\index.html";
 	}
-	
+
 	public static String getpExtentReportPath() {
 		return EXTENTREPORT;
 	}

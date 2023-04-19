@@ -6,9 +6,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-import org.springframework.util.FileSystemUtils;
-import org.testng.ISuite;
+import org.apache.log4j.lf5.viewer.configure.ConfigurationManager;
 import org.testng.ISuiteListener;
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
@@ -30,7 +30,7 @@ public class Listener implements ISuiteListener, ITestListener {
 	public ExtentTest logger;
 
 	@Override
-	public void onStart(ISuite suite) {
+	public void onStart(ITestContext suite) {
 		File output = new File("./output.txt");
 		if (output.exists()) {
 			output.mkdir();
@@ -55,11 +55,13 @@ public class Listener implements ISuiteListener, ITestListener {
 			htmlReporter.config().setReportName("Functional Testing"); // name of the report
 
 			htmlReporter.config().setTheme(Theme.STANDARD);
+
+			//ConfigManager.setProperty("suite", suite.toString());
 		}
 	}
 
 	@Override
-	public void onFinish(ISuite suite) {
+	public void onFinish(ITestContext suite) {
 		String dateName = new SimpleDateFormat("MM_dd_HH_mm_SS").format(new Date());
 		File logfile = new File(FrameworkConstants.getLogspath());
 		File suitelogfile = new File(FrameworkConstants.getAPIReportpath() + "\\" + dateName + "_Logs.log");
@@ -117,16 +119,16 @@ public class Listener implements ISuiteListener, ITestListener {
 
 	public void pass(String message) {
 
-		logger.log(Status.PASS,message);
+		logger.log(Status.PASS, message);
 	}
 
 	public void info(String message) {
 
-		logger.log(Status.INFO,message);
+		logger.log(Status.INFO, message);
 	}
 
 	public void fail(String message) {
 
-		logger.log(Status.FAIL,message);
+		logger.log(Status.FAIL, message);
 	}
 }

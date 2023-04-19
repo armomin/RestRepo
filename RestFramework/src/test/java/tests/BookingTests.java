@@ -9,7 +9,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 
 import constants.EndPoints;
 import constants.FrameworkConstants;
@@ -59,7 +58,6 @@ public class BookingTests {
 
 		Response output = helper.JsonPost(model);
 		bookingid = output.jsonPath().get("bookingid");
-
 		Assert.assertEquals(output.getStatusCode(), 200);
 
 	}
