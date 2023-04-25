@@ -34,7 +34,7 @@ public final class FrameworkConstants {
 
 	public static String getAPIReportpath() {
 		String date = new SimpleDateFormat("yyyy_MM_dd").format(new Date());
-		return APIREPORTPATH + date + "\\" + ConfigManager.getProperty("suite");
+		return APIREPORTPATH + date + "\\" ;
 	}
 
 	public static String getAPIReportIndexpath() {

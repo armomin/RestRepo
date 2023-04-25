@@ -56,7 +56,6 @@ public class Listener implements ISuiteListener, ITestListener {
 
 			htmlReporter.config().setTheme(Theme.STANDARD);
 
-			//ConfigManager.setProperty("suite", suite.toString());
 		}
 	}
 

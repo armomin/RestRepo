@@ -27,7 +27,7 @@ public class BooksTests {
 	@BeforeTest
 	
 
-	@Test(groups = "Book")
+	@Test
 	public void postBookDetails() {
 
 		BooksModel model = new BooksModel();
