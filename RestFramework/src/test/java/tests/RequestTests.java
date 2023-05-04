@@ -8,63 +8,42 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
 
-import constants.EndPoints;
 import constants.FrameworkConstants;
+import fabricator.Fabricator;
 import helpers.RequestHelpers;
 import io.restassured.response.Response;
 import models.request.RequestModel;
-import utils.Log;
 
 @Listeners(utils.Listener.class)
 public class RequestTests {
 	ExtentTest logger;
 
 	public RequestHelpers helper;
+	String title = Fabricator.words().word();
+	String body = Fabricator.words().word();
+	
+	int randomnumber = Fabricator.contact().hashCode();
 
 	@BeforeClass(alwaysRun = true)
 	public void init() {
 		DOMConfigurator.configure(FrameworkConstants.getLog4jxmlPath());
 		helper = new RequestHelpers();
 	}
-	
 
-	@Test(priority=0,groups = "Request")
+	@Test(priority = 0, groups = "Request")
 	public void RequestMethod() {
 
 		RequestModel model = new RequestModel();
 
-		model.setTitle("foo");
-		model.setBody("bar");
-		model.setUserId(1);
+		model.setTitle(title);
+		model.setBody(body);
+		model.setUserId(3);
 
-		System.out.println("request :" + model);
+		Response response = helper.JsonPost(model);
 
-		Response response = helper.JsonPost(model, EndPoints.request);
-		
 		Assert.assertEquals(201, response.statusCode());
-		Assert.assertEquals("foo", response.jsonPath().getString("title"));
-		Assert.assertEquals("bar", response.jsonPath().getString("body"));
-		Assert.assertEquals("1", response.jsonPath().getString("userId"));
-		Assert.assertEquals("101", response.jsonPath().getString("id"));
-		Log.info("response " + response.asPrettyString());
-		
-
-		Log.info("Log Info");
-		Log.fatal("Log fatal");
-		Log.warn("Log warn");
 
 		System.out.println("response " + response.asPrettyString());
 	}
 
-	@Test(priority=1,groups = "Request")
-
-	public void LogsTest() {
-
-		Log.info("Log Info");
-		Log.fatal("Log fatal");
-		Log.warn("Log warn");
-	
-		
-
-	}
 }

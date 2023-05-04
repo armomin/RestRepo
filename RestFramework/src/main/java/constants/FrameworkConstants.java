@@ -1,10 +1,7 @@
 package constants;
 
-import java.util.Date;
-
-import utils.ConfigManager;
-
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public final class FrameworkConstants {
 

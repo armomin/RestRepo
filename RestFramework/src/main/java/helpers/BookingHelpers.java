@@ -28,7 +28,7 @@ public class BookingHelpers {
 
 	public Response JsonPost(Object payload) {
 
-		Log.info("Payload :" + new Gson().toJson(payload));
+		Log.info("\n Payload :" + new Gson().toJson(payload));
 		Response resultRes = RestAssured.given().body(payload).contentType(ContentType.JSON).post(endpoint).andReturn();
 		String result = resultRes.asString();
 		Log.info("\n Header :" + resultRes.getHeader(result));
