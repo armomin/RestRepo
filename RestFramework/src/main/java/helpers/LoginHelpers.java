@@ -12,13 +12,13 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import utils.ConfigManager;
 
-public class BookingHelpers {
+public class LoginHelpers {
 
-	public String BASE_URI = ConfigManager.getProperty("BOOKINGURI");
-	public static Logger Log = Logger.getLogger(BookingHelpers.class.getName());
-	String endpoint = EndPoints.booking;
+	public String BASE_URI = ConfigManager.getProperty("LOGINURI");
+	public static Logger Log = Logger.getLogger(LoginHelpers.class.getName());
+	String endpoint = EndPoints.login;
 
-	public BookingHelpers() {
+	public LoginHelpers() {
 
 		RestAssured.baseURI = BASE_URI;
 
@@ -86,7 +86,7 @@ public class BookingHelpers {
 
 	public Response patchtRequest(Object payload,  int value) throws ParseException {
 
-		Response resultRes = RestAssured.given().auth().preemptive().basic("admin", "password123")
+		Response resultRes = RestAssured.given().auth().preemptive().basic("jamesd", "jamesdpass")
 				.header("Content-Type", "application/json").and().body(payload).when().patch(endpoint + "/" + value)
 				.then().extract().response();
 
